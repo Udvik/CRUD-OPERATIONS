@@ -1,75 +1,8 @@
-/*const express = require('express');
-const router = express.Router();
-const Alien = require('../models/schema');
 
-// Get all aliens
-router.get('/', async (req, res) => {
-    try {
-        const aliens = await Alien.find();
-        res.json(aliens);
-    } catch (err) {
-        res.send('Error: ' + err);
-    }
-});
-
-// Get alien by ID
-router.get('/:id', async (req, res) => {
-    try {
-        const alien = await Alien.findById(req.params.id);
-        res.json(alien);
-    } catch (err) {
-        res.send('Error: ' + err);
-    }
-});
-
-// Add a new alien
-router.post('/', async (req, res) => {
-    const alien = new Alien({
-        name: req.body.name,
-        branch: req.body.tech,
-        sub: req.body.sub
-    });
-
-    try {
-        const a1 = await alien.save();
-        res.json(a1);
-    } catch (err) {
-        res.send('Error');
-    }
-});
-
-// Update an alien's subscription status
-router.patch('/:id', async (req, res) => {
-    try {
-        const alien = await Alien.findById(req.params.id);
-        if (!alien) return res.status(404).json({ message: 'Alien not found' });
-        alien.sub = req.body.sub;
-        const a1 = await alien.save();
-        res.json(a1);
-    } catch (err) {
-        res.send('Error');
-    }
-});
-
-// Delete an alien by ID
-router.delete('/:id', async (req, res) => {
-    try {
-        const alien = await Alien.findById(req.params.id);
-        if (!alien) return res.status(404).json({ message: 'Alien not found' });
-
-        await alien.deleteOne();
-        res.json({ message: 'Alien deleted' });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-});
-
-module.exports = router;
-*/
 
 const express = require('express');
 const router = express.Router();
-const Alien = require('../models/schema'); // Assuming the model file is named 'alien.js'
+const Alien = require('../models/schema'); 
 
 // Get all aliens
 router.get('/', async (req, res) => {
@@ -95,10 +28,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     const alien = new Alien({
         name: req.body.name,
-        branch: req.body.branch, // Corrected key name
+        branch: req.body.branch, 
         sub: req.body.sub,
-        isFriendly: req.body.isFriendly, // Added the isFriendly attribute
-        age: req.body.age // Added the age attribute
+        isFriendly: req.body.isFriendly,
+        age: req.body.age
     });
 
     try {
