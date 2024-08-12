@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true })); // `express.urlencoded` replace
 app.use(express.json()); // `express.json` replaces `body-parser`
 
 // Routes
-const alienRouter = require('./routes/aliens');
+const alienRouter = require('./routes/controller');
 app.use('/aliens', alienRouter);
 
 // Start the server
