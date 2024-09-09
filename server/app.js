@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const url = 'mongodb://127.0.0.1:27020,127.0.0.1:27021,127.0.0.1:27022/cbitit1?replicaSet=m101';
+const url = 'mongodb://127.0.0.1:27017/CBIT';
 const app = express();
 
 // Connect to MongoDB

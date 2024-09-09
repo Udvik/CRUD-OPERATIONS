@@ -6,7 +6,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "Udvik",
+  "author": "Jitesh",
   "license": "ISC",
   "description": "",
   "dependencies": {
